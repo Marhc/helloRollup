@@ -5,12 +5,13 @@ import { terser } from 'rollup-plugin-terser';
 
 export default [
   {
-    input: 'src/main.js',
+    input: 'src/index.js',
     output: {
         file: 'dist/main.js',
         format: 'cjs',
         esModule: false
     },
+    inlineDynamicImports: true,
     plugins: [
       resolve(),
       commonjs(),
@@ -26,19 +27,20 @@ export default [
           ]
         ],
         plugins: [
-            "add-module-exports"
+            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
         ]
       })
     ]
   },
   {
-    input: 'src/main.js',
+    input: 'src/index.js',
     output: {
       file: 'dist/helloRollup.js',
       format: 'umd',
       name: 'helloRollup',
       esModule: false
     },
+    inlineDynamicImports: true,
     plugins: [
       resolve(),
       commonjs(),
@@ -54,19 +56,20 @@ export default [
           ]
         ],
         plugins: [
-            "add-module-exports"
+            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
         ]
       })
     ]
   },
   {
-    input: 'src/main.js',
+    input: 'src/index.js',
     output: {
       file: 'dist/helloRollup.min.js',
       format: 'umd',
       name: 'helloRollup',
       esModule: false
     },
+    inlineDynamicImports: true,
     plugins: [
       resolve(),
       commonjs(),
@@ -82,7 +85,7 @@ export default [
           ]
         ],
         plugins: [
-            "add-module-exports"
+            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
         ]
       }),
       terser()
