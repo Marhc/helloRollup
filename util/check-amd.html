@@ -6,17 +6,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
 
-	<title>IIFE Test</title>
+	<title>AMD Test</title>
 
 </head>
 <body>
     <p>Check the console to view the helloRollup Message.</p>
-	<script type="text/javascript" src="../dist/helloRollup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <script>
-			window.helloRollup.$hello("IIFE")
+        /*global define, require */
+
+        require.config({
+            baseUrl: 'https://cdn.jsdelivr.net/npm/@marhc/hellorollup/dist/'
+        });
+        require(['helloRollup.amd'], function (helloRollup) {
+            'use strict';
+			helloRollup.$hello("AMD")
             helloRollup.$hello("again")
             var hello = helloRollup.$hello
             hello("everybody")
+        });
+            
     </script>
 </body>
 </html>
