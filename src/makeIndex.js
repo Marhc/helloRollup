@@ -4,7 +4,7 @@ const { lstatSync, readdirSync, writeFileSync } = require('fs')
 const isFile = source => lstatSync(source).isFile()
 const getLibs = source => readdirSync(source).map(name => join(source, name)).filter(isFile)
 
-const libs = getLibs(__dirname + '/src/libs')
+const libs = getLibs(__dirname + '/libs')
 
 const getLibName = libPath => parse(libPath).name.substr(1);
 
@@ -17,6 +17,6 @@ libs.forEach( lib => {
 })
 
 const indexContent = indexLine.join( '\n' )
-const indexPath = '/home/marhc/Projetos/helloRollup/src/index.js'
+const indexPath = __dirname + '/index.js'
 
 writeFileSync(indexPath, indexContent); 
