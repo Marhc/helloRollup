@@ -64,66 +64,7 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      file: 'dist/helloRollup.umd.js',
-      format: 'umd',
-      name: 'helloRollup',
-      esModule: false
-    },
-    inlineDynamicImports: true,
-    plugins: [
-      resolve(),
-      commonjs(),
-      babel({
-        exclude: 'node_modules/**',
-        babelrc: false,
-        presets: [
-          [
-            '@babel/env',
-            {
-              targets: 'cover 95%'
-            }
-          ]
-        ],
-        plugins: [
-            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
-        ]
-      })
-    ]
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'dist/helloRollup.umd.min.js',
-      format: 'umd',
-      name: 'helloRollup',
-      esModule: false
-    },
-    inlineDynamicImports: true,
-    plugins: [
-      resolve(),
-      commonjs(),
-      babel({
-        exclude: 'node_modules/**',
-        babelrc: false,
-        presets: [
-          [
-            '@babel/env',
-            {
-              targets: 'cover 95%'
-            }
-          ]
-        ],
-        plugins: [
-            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
-        ]
-      }),
-      terser()
-    ]
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'dist/helloRollup.iife.js',
+      file: 'dist/helloRollup.js',
       format: 'iife',
       name: 'helloRollup',
       esModule: false
@@ -152,7 +93,7 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      file: 'dist/helloRollup.iife.min.js',
+      file: 'dist/helloRollup.min.js',
       format: 'iife',
       name: 'helloRollup',
       esModule: false
