@@ -4,6 +4,7 @@
   "description": "Yet another very simple Hello World example, with Rollupjs",
   "main": "dist/main.min.js",
   "browser": "dist/helloRollup.min.js",
+  "module": "helloRollup.min.mjs",
   "files": [
     "/dist"
   ],
