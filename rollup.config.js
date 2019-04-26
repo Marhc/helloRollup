@@ -178,5 +178,64 @@ export default [
       }),
       terser()
     ]
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'dist/helloRollup.mjs',
+      format: 'esm',
+      name: 'helloRollup',
+      esModule: false
+    },
+    inlineDynamicImports: true,
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel({
+        exclude: 'node_modules/**',
+        babelrc: false,
+        presets: [
+          [
+            '@babel/env',
+            {
+              targets: 'cover 95%'
+            }
+          ]
+        ],
+        plugins: [
+            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
+        ]
+      })
+    ]
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'dist/helloRollup.min.mjs',
+      format: 'esm',
+      name: 'helloRollup',
+      esModule: false
+    },
+    inlineDynamicImports: true,
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel({
+        exclude: 'node_modules/**',
+        babelrc: false,
+        presets: [
+          [
+            '@babel/env',
+            {
+              targets: 'cover 95%'
+            }
+          ]
+        ],
+        plugins: [
+            "add-module-exports", "@babel/plugin-syntax-dynamic-import"
+        ]
+      }),
+      terser()
+    ]
   }
 ];
