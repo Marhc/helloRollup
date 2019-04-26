@@ -1,6 +1,6 @@
 {
   "name": "@marhc/hellorollup",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Yet another very simple Hello World example, with Rollupjs",
   "main": "dist/main.min.js",
   "browser": "dist/helloRollup.min.js",
