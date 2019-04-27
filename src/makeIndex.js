@@ -17,6 +17,6 @@ libs.forEach( lib => {
 })
 
 const indexContent = indexLine.join( '\n' )
-const indexPath = __dirname + '/index.js'
+const indexPath = __dirname + '/index.mjs'
 
 writeFileSync(indexPath, indexContent); 

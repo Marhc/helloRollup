@@ -5,7 +5,7 @@ import { terser } from 'rollup-plugin-terser';
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
         file: 'dist/main.js',
         format: 'cjs',
@@ -33,7 +33,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
         file: 'dist/main.min.js',
         format: 'cjs',
@@ -62,7 +62,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.js',
       format: 'iife',
@@ -91,7 +91,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.min.js',
       format: 'iife',
@@ -121,7 +121,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.amd.js',
       format: 'amd',
@@ -150,7 +150,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.amd.min.js',
       format: 'amd',
@@ -180,7 +180,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.mjs',
       format: 'esm',
@@ -209,7 +209,7 @@ export default [
     ]
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.mjs',
     output: {
       file: 'dist/helloRollup.min.mjs',
       format: 'esm',

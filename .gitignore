@@ -1,4 +1,5 @@
 /src/index.js
+/src/index.mjs
 # Logs
 logs
 *.log
